@@ -58,7 +58,7 @@ public class MonoColorSkybox extends AbstractSkybox {
             VertexBuffer.unbind();
             RenderSystem.enableBlend();
             RenderSystem.defaultBlendFunc();
-            float[] skyColor = world.getSkyProperties().getFogColorOverride(world.getSkyAngle(tickDelta), tickDelta);
+            float[] skyColor = world.getDimensionEffects().getFogColorOverride(world.getSkyAngle(tickDelta), tickDelta);
             float skySide;
             float skyColorGreen;
             float o;
@@ -102,7 +102,7 @@ public class MonoColorSkybox extends AbstractSkybox {
                 matrices.pop();
             }
 
-            if (world.getSkyProperties().isAlternateSkyColor()) {
+            if (world.getDimensionEffects().isAlternateSkyColor()) {
                 RenderSystem.setShaderColor(this.color.getRed() * 0.2F + 0.04F, this.color.getBlue() * 0.2F + 0.04F, this.color.getGreen() * 0.6F + 0.1F, 1.0F);
             } else {
                 RenderSystem.setShaderColor(this.color.getRed(), this.color.getBlue(), this.color.getGreen(), 1.0F);
