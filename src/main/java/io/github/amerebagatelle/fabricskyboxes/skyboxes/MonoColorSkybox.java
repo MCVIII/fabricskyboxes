@@ -74,7 +74,7 @@ public class MonoColorSkybox extends AbstractSkybox {
                 float skyColorRed = skyColor[0];
                 skyColorGreen = skyColor[1];
                 float skyColorBlue = skyColor[2];
-                Matrix4f matrix4f2 = matrices.peek().getModel();
+                Matrix4f matrix4f2 = matrices.peek().getPositionMatrix();
                 bufferBuilder.begin(VertexFormat.DrawMode.TRIANGLE_FAN, VertexFormats.POSITION_COLOR);
                 bufferBuilder.vertex(matrix4f2, 0.0F, 100.0F, 0.0F).color(skyColorRed, skyColorGreen, skyColorBlue, skyColor[3]).next();
 
